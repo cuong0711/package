@@ -1,30 +1,14 @@
-<?php namespace Buonzz\Template;
+<?php
+    $date = date('Y-m-d');
+  while (date('w', strtotime($date)) != 1) {
+    $tmp = strtotime('-1 day', strtotime($date));
+    $date = date('Y-m-d', $tmp);
+  }
 
-/**
-*  A sample class
-*
-*  Use this section to define what this class is doing, the PHPDocumentator will use this
-*  to automatically generate an API documentation using this information.
-*
-*  @author yourname
-*/
-class YourClass{
-
-   /**  @var string $m_SampleProperty define here what this variable is for, do this for every instance variable */
-   private $m_SampleProperty = '';
- 
-  /**
-  * Sample method 
-  *
-  * Always create a corresponding docblock for each method, describing what it is for,
-  * this helps the phpdocumentator to properly generator the documentation
-  *
-  * @param string $param1 A string containing the parameter, do this for each parameter to the function, make sure to make it descriptive
-  *
-  * @return string
-  */
-   public function Sum($a,$b){
-			return $a+$b;
-   }
-  
-}
+  $week = date('W', strtotime($date));
+  $weekto = $week +1;
+     $year =  getdate();
+     $weekday =  $year['mday'] +7;
+      $yearnow  = "week".$weekto.":".$year['year'] ." / " .$year['mon']." /".$week ;
+     echo $yearnow;
+?>
