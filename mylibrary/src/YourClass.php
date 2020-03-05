@@ -1,4 +1,5 @@
-<?php namespace Buonzz\Template;
+<?php 
+namespace Buonzz\Template;
 
 /**
 *  A sample class
